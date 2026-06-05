@@ -112,14 +112,17 @@
     //}
 
     /// <summary>
-    /// 数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）
+    /// 数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限 5：仅本人数据权限）
     /// </summary>
     public class DataScope
     {
+        public const string Key = "dataScope";
+
         public const string All = "1";
         public const string Custom = "2";
         public const string Department = "3";
-        public const string DepartmentAndSub = "4";
+        public const string DepartmentAndChild = "4";
+        public const string Self = "5";
 
         public static string ToDesc(string? val)
         {
@@ -128,7 +131,7 @@
                 All => "全部数据权限",
                 Custom => "自定数据权限",
                 Department => "本部门数据权限",
-                DepartmentAndSub => "本部门及以下数据权限",
+                DepartmentAndChild => "本部门及以下数据权限",
                 _ => ""
             };
         }

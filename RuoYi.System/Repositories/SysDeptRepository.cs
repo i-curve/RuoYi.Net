@@ -27,7 +27,7 @@ public class SysDeptRepository : BaseRepository<SysDept, SysDeptDto>
     public override ISugarQueryable<SysDeptDto> DtoQueryable(SysDeptDto dto)
     {
         return Repo.AsQueryable()
-            .LeftJoin<SysRoleDept>((d, rd) => d.DeptId == rd.DeptId)
+            //.LeftJoin<SysRoleDept>((d, rd) => d.DeptId == rd.DeptId)
             .Where((d) => d.DelFlag == DelFlag.No)
             .WhereIF(dto.DeptId > 0, (d) => d.DeptId == dto.DeptId)
             .WhereIF(dto.ParentId > 0, (d) => d.ParentId == dto.ParentId)
