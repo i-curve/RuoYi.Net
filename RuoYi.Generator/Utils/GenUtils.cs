@@ -47,7 +47,7 @@ namespace RuoYi.Generator.Utils
                 // 字符串长度超过500设置为文本域
                 int columnLength = GetColumnLength(column.ColumnType);
                 string htmlType = columnLength >= 500 || ArraysContains(GenConstants.COLUMNTYPE_TEXT, dataType) ? GenConstants.HTML_TEXTAREA : GenConstants.HTML_INPUT;
-                column.QueryType = htmlType;
+                column.HtmlType = htmlType;
             }
             else if (ArraysContains(GenConstants.COLUMNTYPE_TIME, dataType))
             {
